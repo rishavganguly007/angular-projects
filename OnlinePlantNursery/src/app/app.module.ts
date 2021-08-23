@@ -11,6 +11,10 @@ import { PlantComponent } from './product/plant/plant.component';
 import { PlanterComponent } from './product/planter/planter.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
+import { CustomerComponent } from './customer/customer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: AppComponent},
@@ -19,7 +23,9 @@ const appRoutes: Routes = [
     { path: 'plants', component: PlantComponent },
     { path: 'planters', component: PlanterComponent }
   ] },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'order', component: OrderComponent }
+
 ];
 @NgModule({
   declarations: [
@@ -28,7 +34,11 @@ const appRoutes: Routes = [
     SeedComponent,
     PlantComponent,
     PlanterComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent,
+    CustomerComponent,
+    PageNotFoundComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
