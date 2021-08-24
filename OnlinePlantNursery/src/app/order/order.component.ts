@@ -16,7 +16,7 @@ export class OrderComponent implements OnInit {
   customer = {} as Customer;
   
   constructor(private orderService: OrderService) { 
-    this.customer.customerId = 7;
+    this.customer.customerId = 12;
   }
 
   ngOnInit(): void {

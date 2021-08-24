@@ -29,6 +29,7 @@ export class SeedComponent implements OnInit {
     )
   };
   addSeedToCart(seed: Seed) {
+    console.log("Added")
     this.cartService.addSeedToCart(seed);
     // window.alert('added');
   }

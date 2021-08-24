@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -15,18 +15,22 @@ import { OrderComponent } from './order/order.component';
 import { CustomerComponent } from './customer/customer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
+import { ProfileComponent } from './customer/profile/profile.component';
+import { HeaderComponent } from './header/header.component';
 
-const appRoutes: Routes = [
-  {path: 'home', component: AppComponent},
-  { path: 'products', component: ProductComponent, children:[
-    { path: 'seeds', component: SeedComponent },
-    { path: 'plants', component: PlantComponent },
-    { path: 'planters', component: PlanterComponent }
-  ] },
-  { path: 'cart', component: CartComponent },
-  { path: 'order', component: OrderComponent }
 
-];
+// const appRoutes: Routes = [
+//   {path: 'home', component: AppComponent},
+//   { path: 'products', component: ProductComponent, children:[
+//     { path: 'seeds', component: SeedComponent },
+//     { path: 'plants', component: PlantComponent },
+//     { path: 'planters', component: PlanterComponent }
+//   ] },
+//   { path: 'cart', component: CartComponent },
+//   { path: 'order', component: OrderComponent }
+
+// ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +42,21 @@ const appRoutes: Routes = [
     OrderComponent,
     CustomerComponent,
     PageNotFoundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AddCustomerComponent,
+    ProfileComponent,
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule, 
-    RouterModule.forRoot(appRoutes)
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+    //, 
+    //RouterModule.forRoot(appRoutes)
     
   ],
   providers: [],
