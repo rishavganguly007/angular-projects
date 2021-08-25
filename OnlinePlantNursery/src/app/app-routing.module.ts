@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component';
 import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -25,8 +26,8 @@ const routes: Routes = [
   ] },
   { path: 'cart', component: CartComponent },
   { path: 'order', component: OrderComponent },
- // { path: 'admin-home/:username/:password', component: AdminFinalComponent }, 
-  //{ path: 'admin-customer', component: AdminCustomerComponent },  
+  { path: 'admin-home/:username/:password', component: AdminComponent }, 
+   
   { path: "**", component : PageNotFoundComponent}
 ];
 

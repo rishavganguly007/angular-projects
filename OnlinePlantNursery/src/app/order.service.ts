@@ -8,22 +8,22 @@ import { Order } from './order';
   providedIn: 'root'
 })
 export class OrderService {
-  order = {} as Order; 
+  order = {} as Order;
   private apiServerUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
 
-  getOrder(): Order{
+  getOrder(): Order {
     return this.order;
   }
 
-  setOrder(order: Order): void{
-    
+  setOrder(order: Order): void {
+
     this.order = order;
-    console.log("order Service" + this.order.plantQuantity);
+    console.log("order Service" + this.order);
   }
 
-  public addOrder(order:Order): Observable<Order> {
-    console.log("orderServe",order);
+  public addOrder(order: Order): Observable<Order> {
+    console.log("orderServe", order);
     return this.http.post<Order>(`${this.apiServerUrl}/order/add`, order);
   }
 }

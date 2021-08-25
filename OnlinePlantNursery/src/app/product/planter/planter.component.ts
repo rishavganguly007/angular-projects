@@ -13,16 +13,16 @@ export class PlanterComponent implements OnInit {
 
   planters!: Planter[];
   constructor(private planterService: PlanterService,
-              private cartService: CartService ) { }
-  
+    private cartService: CartService) { }
+
 
   ngOnInit(): void {
     this.getPlanters()
   }
 
-  public getPlanters(): void{
+  public getPlanters(): void {
     this.planterService.getPlanters().subscribe(
-      (response:Planter[])=>{
+      (response: Planter[]) => {
         this.planters = response;
       },
       (error: HttpErrorResponse) => {

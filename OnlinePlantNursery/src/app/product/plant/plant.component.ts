@@ -13,16 +13,16 @@ export class PlantComponent implements OnInit {
 
   plants!: Plant[];
   constructor(private plantService: PlantService,
-    private cartService: CartService ) { }
-  
+    private cartService: CartService) { }
+
 
   ngOnInit(): void {
     this.getPlants()
   }
 
-  public getPlants(): void{
+  public getPlants(): void {
     this.plantService.getPlants().subscribe(
-      (response:Plant[])=>{
+      (response: Plant[]) => {
         this.plants = response;
       },
       (error: HttpErrorResponse) => {
@@ -34,5 +34,5 @@ export class PlantComponent implements OnInit {
     this.cartService.addPlantToCart(plant);
     // window.alert('added');
   }
-  
+
 }

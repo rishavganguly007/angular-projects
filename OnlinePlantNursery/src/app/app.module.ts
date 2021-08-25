@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AddCustomerComponent } from './customer/add-customer/add-customer.component';
 import { ProfileComponent } from './customer/profile/profile.component';
 import { HeaderComponent } from './header/header.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 // const appRoutes: Routes = [
@@ -46,6 +47,7 @@ import { HeaderComponent } from './header/header.component';
     AddCustomerComponent,
     ProfileComponent,
     HeaderComponent,
+    AdminComponent,
     
   ],
   imports: [

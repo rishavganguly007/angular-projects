@@ -10,11 +10,11 @@ import { SeedService } from '../seed.service';
 })
 export class ProductComponent implements OnInit {
 
-  
-  constructor() {}
+
+  constructor() { }
 
   ngOnInit(): void {
-   
+
   }
-  
+
 }

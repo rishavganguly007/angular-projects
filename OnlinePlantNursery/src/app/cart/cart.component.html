@@ -3,10 +3,10 @@
     <div class="container">
       <div class="block-heading">
         <h2>Shopping Cart</h2>
-        <p>
+        <!-- <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
           urna, dignissim nec auctor in, mattis vitae leo.
-        </p>
+        </p> -->
       </div>
       <div class="content">
         <div class="row">
@@ -26,10 +26,10 @@
                             <a href="#">{{seedItem.commonName}}</a>
                             <div class="product-info">
                               <div>
-                                Display: <span class="value">5 inch</span>
+                                Bloom Time: <span class="value">{{seedItem.bloomTime}}</span>
                               </div>
-                              <div>RAM: <span class="value">4GB</span></div>
-                              <div>Memory: <span class="value">32GB</span></div>
+                              <div>Type of Seeds: <span class="value">{{seedItem.typeOfSeeds}}</span></div>
+                              <div>Watering: <span class="value">{{seedItem.watering}}</span></div>
                             </div>
                           </div>
                         </div>
@@ -42,6 +42,7 @@
                         <div class="col-md-3 price">
                           <span>{{seedItem.seedsCost}}</span>
                         </div>
+
                       </div>
                     </div>
                   </div>
@@ -61,10 +62,10 @@
                             <a href="#">{{plantItem.commonName}}</a>
                             <div class="product-info">
                               <div>
-                                Display: <span class="value">5 inch</span>
+                                Blooom Time: <span class="value">{{plantItem.bloomTime}}</span>
                               </div>
-                              <div>RAM: <span class="value">4GB</span></div>
-                              <div>Memory: <span class="value">32GB</span></div>
+                              <div>Medical Use: <span class="value">{{plantItem.medicinalOrCulinaryUse}}GB</span></div>
+                              <div>Type of Plant: <span class="value">{{plantItem.typeOfPlant}}</span></div>
                             </div>
                           </div>
                         </div>
@@ -96,10 +97,10 @@
                             <a href="#">Planter</a>
                             <div class="product-info">
                               <div>
-                                Display: <span class="value">5 inch</span>
+                                Height: <span class="value">{{planterItem.planterheight}}</span>
                               </div>
-                              <div>RAM: <span class="value">4GB</span></div>
-                              <div>Memory: <span class="value">32GB</span></div>
+                              <div>Capacity: <span class="value">{{planterItem.planterCapacity}}</span></div>
+                              <div>Drainage Holes: <span class="value">{{planterItem.drinageHoles}}</span></div>
                             </div>
                           </div>
                         </div>
@@ -135,7 +136,8 @@
                 <span class="text">Total</span><span class="price">{{totalPrice}}</span>
               </div>
               <a routerLink="/order">
-                <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "onClickCheckout()">
+                <button *ngIf="totalPrice !=0" type="button" class="btn btn-primary btn-lg btn-block"
+                  (click)="onClickCheckout()">
                   Checkout
                 </button>
               </a>

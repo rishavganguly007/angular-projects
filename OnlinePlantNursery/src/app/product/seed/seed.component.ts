@@ -12,15 +12,15 @@ import { SeedService } from 'src/app/seed.service';
 export class SeedComponent implements OnInit {
   seeds!: Seed[];
   constructor(private seedService: SeedService,
-              private cartService: CartService ) { }
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getSeeds();
   }
 
-  public getSeeds(): void{
+  public getSeeds(): void {
     this.seedService.getSeeds().subscribe(
-      (response:Seed[])=>{
+      (response: Seed[]) => {
         this.seeds = response;
       },
       (error: HttpErrorResponse) => {

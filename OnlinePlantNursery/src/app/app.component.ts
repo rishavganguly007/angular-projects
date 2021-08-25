@@ -12,19 +12,28 @@ export class AppComponent {
 
   constructor(private router: Router) {
     // on route change to '/login', set the variable showHead to false
-      router.events.forEach((event) => {
-        if (event instanceof NavigationStart) {
-          if (event['url'] == '/customer') {
-            this.showHead = false;
-          }
-          if (event['url'] == '/add-customer') {
-            this.showHead = false;
-          }
-           else {
-            // console.log("NU")
-            this.showHead = true;
-          }
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/customer') {
+          this.showHead = false;
         }
-      });
-    }
+        else if (event['url'] == '/add-customer') {
+          this.showHead = false;
+        }
+        else if (event['url'] == '/welcome') {
+          this.showHead = false;
+        }
+        else if (event['url'] == '/') {
+          this.showHead = false;
+        }
+        else if (event['url'] == '/admin-home/MyAdmin/1234') {
+          this.showHead = false;
+        }
+        else {
+          // console.log("NU")
+          this.showHead = true;
+        }
+      }
+    });
+  }
 }

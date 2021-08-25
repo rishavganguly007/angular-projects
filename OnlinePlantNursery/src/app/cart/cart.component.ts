@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Order } from '../order';
+import { Seed } from '../seed';
 
 @Component({
   selector: 'app-cart',
@@ -26,7 +27,7 @@ export class CartComponent implements OnInit {
   plantItemQuantity: number = 1;
   planterItemQuantity: number = 1;
 
-  order = {} as Order; 
+  order = {} as Order;
   constructor(private cartService: CartService) {
     if (this.seedItems.length != 0)
       this.seedSum = this.seedItems[0].seedsCost;
@@ -108,23 +109,24 @@ export class CartComponent implements OnInit {
     this.totalPrice = this.seedTotal + this.plantTotal + this.planterTotal;
 
   }
-   
-  onClickCheckout(): void{
+
+  onClickCheckout(): void {
     console.log("cart compo" + this.plantItemQuantity);
     this.order.plantQuantity = this.plantItemQuantity;
     this.order.planterQuantity = this.planterItemQuantity;
     this.order.seedQuantity = this.seedItemQuantity;
     this.order.totalCost = this.totalPrice;
-   // this.order.bookingOrderId = 1;
-   // this.order.customer = 5;
-   // this.order.orderDate='';
+    // this.order.bookingOrderId = 1;
+    // this.order.customer = 5;
+    // this.order.orderDate='';
     this.order.plant = this.plantItems;
     this.order.seed = this.seedItems;
     this.order.planters = this.planterItems;
     this.order.quantity = 4;
-   // this.order.transactionMode = "";
-    
+    // this.order.transactionMode = "";
+
     this.cartService.onClickCheckout(this.order);
   }
+
 
 }
