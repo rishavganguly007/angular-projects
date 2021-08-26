@@ -111,6 +111,4 @@ export class AdminService {
   deleteSeed(id: number): Observable<Object> {
     return this.httpClient.delete(`${this._seedBaseUrl}/${id}`);
   }
-
-
 }

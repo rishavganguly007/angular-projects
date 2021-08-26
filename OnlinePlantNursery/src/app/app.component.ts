@@ -26,7 +26,7 @@ export class AppComponent {
         else if (event['url'] == '/') {
           this.showHead = false;
         }
-        else if (event['url'] == '/admin-home/MyAdmin/1234') {
+        else if (event['url'] == '/admin-home/admin123/3Password') {
           this.showHead = false;
         }
         else {

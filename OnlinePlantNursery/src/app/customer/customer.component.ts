@@ -37,20 +37,10 @@ export class CustomerComponent implements OnInit {
     this.customerUsername = this.loginForm.controls.username.value;
     this.customerPassword = this.loginForm.controls.password.value;
 
-    /*     -- By Tarit                
     this._customerservice.validateCustomer(this.customerUsername, this.customerPassword).subscribe(
-      data=>{       
-      if(data == true) {
-        this._router.navigate(['/home', this.customerUsername, this.customerPassword]);
-      } else{
-        this._router.navigate(['']);
-      } }); */
-
-    this._customerservice.validateCustomer(this.customerUsername, this.customerPassword).subscribe(
-      data => { this._router.navigate(['/home', this.customerUsername, this.customerPassword]) }
+      data => { this._router.navigate(['/home', this.customerUsername, this.customerPassword],{skipLocationChange: true}) }
       , error => this.isShown = true);
-
-  }
+    }
 
   ///////////////////////ADMIN//////////////////////////////
   isAdminShown: boolean = false;
